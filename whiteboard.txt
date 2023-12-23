@@ -1,0 +1,24 @@
+Input strin gof repeeated chars
+input = "aaabbcddddaa"
+output = 3ab2c4d2a
+
+no spaces
+
+function compress(string) {
+	const letters = string.split("");
+  let result = ""
+  let count = 0;
+  let currentLetter = letters[0]
+  
+  for (i = 0; i< letters.length; i ++) {
+  	if (letters[i] === currentLetter) {
+    count ++
+    } else {
+    	result = result + count + currentLetter
+      count = 1
+      currentLetter = letters[i]
+    }
+  }
+  
+  return result;
+}
